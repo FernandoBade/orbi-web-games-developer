@@ -9,7 +9,7 @@ function start() {
     $("#fundoGame").append("<div id='energia'></div>");
     
     var jogo = {}
-    var key = { W: 38, S: 40, D: 68 }
+    var tecla = { cimaW: 87, baixoS: 83, espaco: 32 }
     var velocidade = 5;
     var posicaoY = parseInt(Math.random() * 334);
     var podeAtirar = true;
@@ -59,7 +59,7 @@ function start() {
 
     // função para mover o helicóptero cinza
     function moveJogador() {
-        if (jogo.pressionou[key.W]) {
+        if (jogo.pressionou[tecla.cimaW]) {
             var topo = parseInt($("#jogador").css("top"));
             $("#jogador").css("top",topo - 10);
 
@@ -69,7 +69,7 @@ function start() {
             }
         }
 
-        if (jogo.pressionou[key.S]) {
+        if (jogo.pressionou[tecla.baixoS]) {
             var topo = parseInt($("#jogador").css("top"));
             $("#jogador").css("top",topo + 10);
 
@@ -79,7 +79,7 @@ function start() {
             }
         }
         
-        if (jogo.pressionou[key.D]) {
+        if (jogo.pressionou[tecla.espaco]) {
             disparo(); // chama função disparo	
         }
     }

@@ -7,7 +7,10 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
+            "name": "Jogo de naves",
+            "skipFiles":[
+                "<node_internals>/**"
+            ],
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
         }
