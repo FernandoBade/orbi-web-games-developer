@@ -235,15 +235,21 @@ body {
 }
 
 #explosao1 {
-	width: 15px;
-	height: 87px;
+	width: 100px;
+	height: 150px;
 	position: absolute;
+	background-size: cover;
+	bottom: 100px;
+	margin-top: -50px;
 }
 
 #explosao2 {
-	width: 15px;
-	height: 87px;
+	width: 100px;
+	height: 150px;
 	position: absolute;
+	background-size: cover;
+	bottom: 100px;
+	margin-top: -50px;
 }
 
 #explosao3 {

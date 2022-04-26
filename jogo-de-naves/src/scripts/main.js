@@ -74,7 +74,7 @@ function start() {
             $("#jogador").css("top",topo + 10);
 
             // limitando o helicóptero no final da página
-            if (topo>=434) {	
+            if (topo>=404) {	
                 $("#jogador").css("top",topo - 10);		
             }
         }
@@ -88,12 +88,12 @@ function start() {
     function moveInimigo1() {
         posicaoX = parseInt($("#inimigo1").css("left"));
         $("#inimigo1").css("left",posicaoX - velocidade);
-        $("#inimigo1").css("top",posicaoY);
+        $("#inimigo1").css("top",posicaoY+30);
             
         if (posicaoX<=0) {
             posicaoY = parseInt(Math.random() * 334);
             $("#inimigo1").css("left",694);
-            $("#inimigo1").css("top",posicaoY);           
+            $("#inimigo1").css("top",posicaoY+30);           
         }
     }
 
@@ -229,12 +229,12 @@ function start() {
     function explosao1(inimigo1X,inimigo1Y) {
         somExplosao.play();
         $("#fundoGame").append("<div id='explosao1'></div");
-        $("#explosao1").css("background-image", "url(./src/assets/images/explosao.png)");
+        $("#explosao1").css("background-image", "url(./src/assets/images/explosao-animada.gif)");
 
         var div = $("#explosao1");
         div.css("top", inimigo1Y);
         div.css("left", inimigo1X);
-        div.animate({width: 200, opacity: 0}, "slow");
+        // div.animate({width: 200, opacity: .9}, "slow");
         
         var tempoExplosao = window.setInterval(removeExplosao, 500);
         
@@ -263,12 +263,12 @@ function start() {
 	function explosao2(inimigo2X,inimigo2Y) {
         somExplosao.play();
         $("#fundoGame").append("<div id='explosao2'></div");
-        $("#explosao2").css("background-image", "url(./src/assets/images/explosao.png)");
+        $("#explosao2").css("background-image", "url(./src/assets/images/explosao-animada.gif)");
 
         var div2 = $("#explosao2");
         div2.css("top", inimigo2Y);
         div2.css("left", inimigo2X);
-        div2.animate({width: 200, opacity: 0}, "slow");
+        // div2.animate({width: 200, opacity: 0}, "slow");
         
         var tempoExplosao2 = window.setInterval(removeExplosao2, 500);
         
