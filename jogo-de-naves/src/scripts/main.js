@@ -189,7 +189,7 @@ function start() {
         
 	        $("#disparo").css("left",950);
 	        posicaoY = parseInt(Math.random() * 334);
-	        $("#inimigo1").css("left",694);
+	        $("#inimigo1").css("left",870);
             $("#inimigo1").css("top",posicaoY);
         }
 
@@ -236,7 +236,7 @@ function start() {
         div.css("left", inimigo1X);
         div.animate({width: 200, opacity: 0}, "slow");
         
-        var tempoExplosao = window.setInterval(removeExplosao, 1000);
+        var tempoExplosao = window.setInterval(removeExplosao, 500);
         
         function removeExplosao() {
             div.remove();
@@ -270,7 +270,7 @@ function start() {
         div2.css("left", inimigo2X);
         div2.animate({width: 200, opacity: 0}, "slow");
         
-        var tempoExplosao2 = window.setInterval(removeExplosao2, 1000);
+        var tempoExplosao2 = window.setInterval(removeExplosao2, 500);
         
         function removeExplosao2() {
             div2.remove();
@@ -300,7 +300,7 @@ function start() {
         $("#explosao3").css("top",amigoY);
         $("#explosao3").css("left",amigoX);
 
-        var tempoExplosao3 = window.setInterval(resetaExplosao3, 1000);
+        var tempoExplosao3 = window.setInterval(resetaExplosao3, 500);
 
         function resetaExplosao3() {
             $("#explosao3").remove();

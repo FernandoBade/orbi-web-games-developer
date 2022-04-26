@@ -42,22 +42,26 @@ body {
 }
 
 #jogador {
-	width: 256px;
-	height: 66px;
+	width: 120px;
+	height: 110px;
 	position: absolute;
-	left: 8px;
+	left: 20px;
 	top: 179px;
-	background-image: url(../assets/images/apache.png);
+	background-image: url(../assets/images/aviao1.webp);
+	object-fit: cover;
+	background-size: cover;
 }
 
 #inimigo1 {
-	width: 256px;
-	height: 66px;
+	width: 60px;
+	height: 60px;
 	position: absolute;
-	left: 689px;
-	top: 253px;
-	background-image: url(../assets/images/inimigo1.png);
-
+	left: 90%;
+	top: 293px;
+	background-image: url(../assets/images/ovni.gif);
+	object-fit: cover;
+	background-size: cover;
+	
 }
 
 #inimigo2 {
@@ -66,7 +70,7 @@ body {
 	position: absolute;
 	left: 775px;
 	top: 447px;
-	background-image: url(../assets/images/inimigo2.png);
+	background-image: url(../assets/images/inimigo3.gif);
 }
 
 #amigo {
@@ -75,7 +79,7 @@ body {
 	position: absolute;
 	left: 10px;
 	top: 464px;
-	background-image: url(../assets/images/amigo.png);
+	background-image: url(../assets/images/amigo.gif);
 }
 
 #inicio {
@@ -87,19 +91,21 @@ body {
 	text-align: center;
 	padding: 10px;
 	font-family: 'Roboto';
+	border-radius: 12px;
 }
 
-.anima1 {
-	background-image: url(../assets/images/helicoptero.png);
+/* .anima1 {
+	background-image: url(../assets/images/aviao1.webp);
 	animation: play .5s steps(2) infinite;
 
 	-webkit-animation: play .5s steps(2) infinite;
 	-moz-animation: play .5s steps(2) infinite;
 	-ms-animation: play .5s steps(2) infinite;
 	-o-animation: play .5s steps(2) infinite;
-}
+	} */
 
-.anima2 {
+
+/* .anima2 {
 	background-image: url(../assets/images/inimigo1.png);
 	animation: play .5s steps(2) infinite;
 
@@ -157,9 +163,9 @@ body {
 	to {
 		background-position: -512px;
 	}
-}
+} */
 
-.anima3 {
+/* .anima3 {
 	background-image: url(../assets/images/amigo.png);
 	animation: play2 .9s steps(12) infinite;
 
@@ -217,12 +223,14 @@ body {
 	to {
 		background-position: -528px;
 	}
-}
+} */
 
 #disparo {
 	width: 50px;
-	height: 8px;
+	height: 25px;
 	position: absolute;
+	margin-top: 12px;
+	margin-left: -92px;
 	background-image: url(../assets/images/disparo.png);
 }
 
@@ -342,18 +350,5 @@ h3 {
 	margin-right: auto;
 	text-align: center;
 	padding: 10px;
-	font-family: 'Roboto';
-}
-
-footer {
-	background-color: #FFF;
-	text-align: center;
-	margin-top: 100px;
-	border-color: #FFF;
-	border-style: solid;
-	width: 950px;
-	height: 140px;
-	margin-left: auto;
-	margin-right: auto;
 	font-family: 'Roboto';
 }
