@@ -93,7 +93,7 @@ body {
 
 #inicio {
 	width: 350px;
-	height: 200px;
+	height: 240px;
 	background-color: rgba(255, 255, 255, 0.9);
 	text-align: center;
 	padding: 0px 10px 80px 10px;
@@ -105,7 +105,7 @@ body {
 
 .start {
 	text-align: left;
-	margin-left: 10px;
+	margin-left: 105px;
 	font-size: 16px;
 }
 
@@ -247,6 +247,22 @@ h3 {
 	color: black;
 	letter-spacing:2px;
 	cursor: pointer;
+}
+
+.rodape{
+	color:white;
+	text-align:center;
+	width: 940px;
+	bottom: 20px;
+	position: absolute;
+	line-height: 20px;
+}
+
+.rodape a{
+	color:white;
+}
+.rodape a:hover{
+	color:rgb(172, 172, 172);
 }
 
 #fim {
