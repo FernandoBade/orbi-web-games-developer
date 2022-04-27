@@ -311,7 +311,7 @@ function start() {
 
     // função que soma a pontuação do jogo
     function placar() {
-        $("#placar").html("<h2> Pontos: " + pontos + " Salvos: " + salvos + " Perdidos: " + perdidos + "</h2>");
+        $("#placar").html("<h2> Pontos: "  + pontos + "<br>" + " Salvos: " + salvos + "<br>" + " Perdidos: " + perdidos + "</h2>");
     }
 
     // função que avalia a energia (vida) do jogador, helicóptero cinza
@@ -347,7 +347,7 @@ function start() {
         $("#inimigo2").remove();
         $("#amigo").remove();
         $("#fundoGame").append("<div id='fim'></div>");
-        $("#fim").html("<h1> Game Over </h1><p>Sua pontuação foi: " + pontos + "</p>" + "<div id='reinicia' onClick=reiniciaJogo()><h3>Jogar Novamente</h3></div>");
+        $("#fim").html("<h1> Game Over </h1><p>Sua pontuação foi: " + pontos + "</p>" + "<div id='reinicia' onClick=reiniciaJogo()><button>Jogar Novamente</button></div>");
     }
 
 }
