@@ -28,6 +28,7 @@ function start() {
     jogo.timer = setInterval(loop,30); // deixando o fundo do jogo em loop a cada 30ms
     jogo.pressionou = [];
     musica.addEventListener("ended", function(){ musica.currentTime = 0; musica.play(); }, false);
+    musica.load()
     musica.play();
 
     //Verifica se o usuário pressionou alguma tecla
@@ -338,10 +339,10 @@ function start() {
 	function gameOver() {
         fimdejogo = true;
         musica.pause();
+        somGameover.load()
         somGameover.play();
         window.clearInterval(jogo.timer);
         jogo.timer = null;
-        
         $("#jogador").remove();
         $("#inimigo1").remove();
         $("#inimigo2").remove();
