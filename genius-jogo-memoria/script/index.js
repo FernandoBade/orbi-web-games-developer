@@ -11,6 +11,7 @@ let verde = document.querySelector('.verde');
 let vermelho = document.querySelector('.vermelho');
 let amarelo = document.querySelector('.amarelo');
 let azul = document.querySelector('.azul');
+let pontosNaTela = document.querySelector('.score');
 
 //criacao das cores aleatoriamente
 
@@ -50,7 +51,8 @@ let confereOrdem = () => {
         }
     }
     if (ordem.length === ordemClick.length) {
-        alert(`Pontuação: ${pontuacao}\nVocê acertou! iniciando próximo nível...`);
+        pontosNaTela.innerHTML = pontuacao;
+        // alert(`Pontuação: ${pontuacao}\nVocê acertou! iniciando próximo nível...`);
         proximoNivel();
     }
 }
@@ -73,12 +75,16 @@ let criaCorElemento = (cor) => {
     switch (cor) {
         case 0:
             return verde;
+            break;
         case 1:
             return vermelho;
+            break;
         case 2:
             return amarelo;
+            break;
         case 3:
             return azul;
+            break;
     }
 }
 
@@ -88,15 +94,17 @@ let proximoNivel = () => {
 }
 
 let perdeu = () => {
-    alert(`Pontuação: ${pontuacao}\nVocê perdeu! Clique em OK para iniciar um novo jogo`);
+    alert(`Você perdeu! Obrigado por ter jogado!`)
     ordem = []
+    pontuacao = 0;
     ordemClick = []
-    comecarJogo();
+    location.reload();
 }
 
 let comecarJogo = () => {
-    alert(`Bem vindo ao jogo de memória!\nIniciando um novo jogo...`);
-    pontuacao = 0; 
+    pontosNaTela.innerHTML = `${pontuacao}`;
+    alert(`Bem vindo ao jogo de memória!\nObserve as cores e clique na mesma ordem em que piscarem.\nBoa sorte!`);
+    pontuacao = 0;
     proximoNivel();
 }
 
@@ -106,12 +114,7 @@ let comecarJogo = () => {
 // azul.addEventListener('click', click(3));
 
 
-verde.onclick = () => { click(0)};
-vermelho.onclick = () => { click(1)};
-amarelo.onclick = () => { click(2)};
-azul.onclick = () => { click(3)};
-
-
-
-
-comecarJogo();
+verde.onclick = () => { click(0) };
+vermelho.onclick = () => { click(1) };
+amarelo.onclick = () => { click(2) };
+azul.onclick = () => { click(3) };
