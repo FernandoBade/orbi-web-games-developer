@@ -28,10 +28,13 @@ let ordemAleatoria = () => {
 //acende a próxima cor
 
 let corLight = (e, num) => {
-    num = num * 50;
+    num = num * 100;
     setTimeout(() => {
         e.classList.add('selected');
-    }, num + 250);
+        setTimeout(() => {
+            e.classList.remove('selected');
+        }, 500);
+    }, num + 500);
     setTimeout(() => {
         e.classList.remove('selected');
     });
