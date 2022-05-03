@@ -1,0 +1,104 @@
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: rgb(27, 27, 27);
+    background-image: url(img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+#main-play-area {
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    height: 600px;
+    width: 600px;
+    border-radius: 10px;
+    border-right: 3px solid #00365879;
+    border-top: 3px solid #011d2eb6;
+    border-bottom: 3px solid #0c5c8d85;
+    border-left: 3px solid #0c5c8d50;
+}
+
+.game-instructions {
+    position: relative;
+    color: #1bc2b9;
+    left: 80px;
+    top: -50px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    display: block;
+    width: 70%;
+    font-family: monospace;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.start-button {
+    position: relative;
+    color: #0c5c8d;
+    top: 2.75em;
+    left: 12.5rem;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-family: monospace;
+    border: 1px solid #0c5c8d;
+    display: block;
+    text-align: center;
+    font-size: .75rem;
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #07fcef;
+    border: 1px solid #07fcef;
+
+}
+
+.player-shooter {
+    position: relative;
+    height: 60px;
+    width: 75px;
+    left: 20px;
+    top: 250px
+    
+}
+
+.laser {
+    position: relative;
+    width: 40px;
+    height: 30px;
+}
+
+.alien {
+    height: 60px;
+    width: 70px;
+    position: relative;
+}
+
+.alien-transition {
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.dead-alien {
+    height: 60px;
+    width: 70px;
+    position: relative;
+    opacity: 0;
+}
