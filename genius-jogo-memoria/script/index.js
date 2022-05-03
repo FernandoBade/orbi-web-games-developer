@@ -3,33 +3,112 @@
 // 2 = amarelo
 // 3 = azul
 
-const ordemJogo = []; 
-const ordemJogador = [];
-const pontuacao = 0;
+let ordem = [];
+let ordemClick = [];
+let pontuacao = 0;
 
-const verde = document.querySelector('.verde');
-const vermelho = document.querySelector('.vermelho');
-const amarelo = document.querySelector('.amarelo');
-const azul = document.querySelector('.azul');
+let verde = document.querySelector('.verde');
+let vermelho = document.querySelector('.vermelho');
+let amarelo = document.querySelector('.amarelo');
+let azul = document.querySelector('.azul');
 
-const ordemAleatoria = () => {
-    const ordem = Math.floor(Math.random() * 4);
-    ordemJogo[ordemJogo.length] = ordem;
+//criacao das cores aleatoriamente
 
-    for(let i in ordem){
-    let corJogada = createColorElement(order[i]);
-    corLight(corJogada, Number([i] + 1));
+let ordemAleatoria = () => {
+    let ordemCor = Math.floor(Math.random() * 4);
+    ordem[ordem.length] = ordemCor;
+    ordemClick = [];
+
+    for (let i in ordem) {
+        let corElemento = criaCorElemento(ordem[i]);
+        corLight(corElemento, Number((i) + 1));
     }
 }
 
+//acende a próxima cor
+
 let corLight = (e, num) => {
-    num = num * 500;
+    num = num * 50;
     setTimeout(() => {
         e.classList.add('selected');
-    }, num - 250);
+    }, num + 250);
     setTimeout(() => {
         e.classList.remove('selected');
-    }, num + 250);
+    });
+}
+
+//confere a ordem das jogadas
+
+let confereOrdem = () => {
+    for (let i in ordemClick) {
+        if (ordem[i] !== ordemClick[i]) {
+            perdeu();
+            break;
+        }
+    }
+    if (ordem.length === ordemClick.length) {
+        alert(`Pontuação: ${pontuacao}\nVocê acertou! iniciando próximo nível...`);
+        proximoNivel();
+    }
+}
+
+//funcao para o click do jogador
+
+let click = (cor) => {
+    ordemClick[ordemClick.length] = cor;
+    criaCorElemento(cor).classList.add('selected');
+    setTimeout(() => {
+        criaCorElemento(cor).classList.remove('selected');
+        confereOrdem();
+    }, 250);
 }
 
 
+//funcao que retorna a cor
+
+let criaCorElemento = (cor) => {
+    switch (cor) {
+        case 0:
+            return verde;
+        case 1:
+            return vermelho;
+        case 2:
+            return amarelo;
+        case 3:
+            return azul;
+    }
+}
+
+let proximoNivel = () => {
+    pontuacao++
+    ordemAleatoria();
+}
+
+let perdeu = () => {
+    alert(`Pontuação: ${pontuacao}\nVocê perdeu! Clique em OK para iniciar um novo jogo`);
+    ordem = []
+    ordemClick = []
+    comecarJogo();
+}
+
+let comecarJogo = () => {
+    alert(`Bem vindo ao jogo de memória!\nIniciando um novo jogo...`);
+    pontuacao = 0; 
+    proximoNivel();
+}
+
+// verde.addEventListener('click', click(0));
+// vermelho.addEventListener('click', click(1));
+// amarelo.addEventListener('click', click(2));
+// azul.addEventListener('click', click(3));
+
+
+verde.onclick = () => { click(0)};
+vermelho.onclick = () => { click(1)};
+amarelo.onclick = () => { click(2)};
+azul.onclick = () => { click(3)};
+
+
+
+
+comecarJogo();
